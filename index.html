@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nuage de chaussure</title>
+    <script src="https://kit.fontawesome.com/2c7fc28a2f.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="style.css">
+
+
+
+
+</head>
+<body>
+
+<!--navbar-->
+<header>
+ <ul>
+   <li class="logo">nuage de chaussure</li>
+   <li class="items"><a href="#">acceuil</a></li>
+   <li class="items"><a href="#">A propos</a></li>
+   <li class="items"><a href="#">service</a></li>
+   <li class="items"><a href="#">Contact</a></li>
+   <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
+  </ul>
+</header>
+    <script>
+      $(document).ready(function(){
+        $('.btn').click(function(){
+          $('.items').toggleClass("show");
+          $('ul li').toggleClass("hide");
+        });
+      });
+    </script>
+<!--end navbar-->
+  <!--home-->
+  <section class="intro">
+    <div class="left">
+      <div>
+        <h1 class="tat">les meilleures produits </h1>
+        <p class="ph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos eveniet amet excepturi voluptates dolorem totam ad quod hic, porro accusamus, repellat, corrupti at obcaecati ducimus, dolor quibusdam sequi nemo inventore?</p>
+      </div>
+    </div>
+  <!--slider-->
+    <div class="slider">
+      <ul>
+        <li style="background-image:url(img1.jpg)">
+        </li>
+        <li style="background-image:url(img2.jpg)">
+              
+        </li>
+        <li style="background-image:url(img3.jpg)">
+              
+        </li>
+      </ul>
+   
+	
+      <ul>
+            <nav>
+              <a href="#"></a>
+              <a href="#"></a>
+              <a href="#"></a>
+            </nav>
+      </ul>
+    </div>
+    <!--javascript slider-->
+    <script>
+            {
+	        class SliderClip {
+		constructor(el) {
+			this.el = el;
+			this.Slides = Array.from(this.el.querySelectorAll('li'));
+			this.Nav = Array.from(this.el.querySelectorAll('nav a'));
+			this.totalSlides = this.Slides.length;
+			this.current = 0;
+			this.autoPlay = true; //true or false
+			this.timeTrans = 4000; //transition time in milliseconds
+			this.IndexElements = [];
+
+			for(let i=0;i<this.totalSlides;i++) {
+				this.IndexElements.push(i);
+			}
+
+			this.setCurret();
+			this.initEvents();
+		}
+		setCurret() {
+			this.Slides[this.current].classList.add('current');
+			this.Nav[this.current].classList.add('current_dot');
+		}
+		initEvents() {
+			const self = this;
+
+			this.Nav.forEach((dot) => {
+				dot.addEventListener('click', (ele) => {
+					ele.preventDefault();
+					this.changeSlide(this.Nav.indexOf(dot));
+				})
+			})
+
+			this.el.addEventListener('mouseenter', () => self.autoPlay = false);
+			this.el.addEventListener('mouseleave', () => self.autoPlay = true);
+
+			setInterval(function() {
+				if (self.autoPlay) {
+					self.current = self.current < self.Slides.length-1 ? self.current + 1 : 0;
+					self.changeSlide(self.current);
+				}
+			}, this.timeTrans);
+
+		}
+		changeSlide(index) {
+
+			this.Nav.forEach((allDot) => allDot.classList.remove('current_dot'));
+
+			this.Slides.forEach((allSlides) => allSlides.classList.remove('prev', 'current'));
+
+			const getAllPrev = value => value < index;
+
+			const prevElements = this.IndexElements.filter(getAllPrev);
+
+			prevElements.forEach((indexPrevEle) => this.Slides[indexPrevEle].classList.add('prev'));
+
+			this.Slides[index].classList.add('current');
+			this.Nav[index].classList.add('current_dot');
+		}
+	}
+
+	        const slider = new SliderClip(document.querySelector('.slider'));
+              }
+    </script>
+  </section> 
+
+<!--end home-->
+<!--team-->
+<div class="edgt">
+  <div>
+    <h3 class="title">magasinez  préféré</h3>
+      <p class="text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim diam nonummy tincidunt ut laoreet dolore </p>
+  </div>
+  <div class="single">
+    <h3>leila yagoubi</h3>
+  </div>
+</div>
+</div>
+<!--produit carte-->
+<section class="tap-menu product-tap-menu">
+  <ul class="clearfix">
+        <li><a href="">neuvauté</a></li>
+        <li><a href="">feuteur </a></li>
+        <li><a href="">meilleur</a></li>
+  </ul>
+</section>
+<section class="products clearfix">
+  <article class="product">
+        <div class="product-thumnail">
+          <img src="CH5.jpg" alt="" class="product-img">
+          <div class="label label-new">neuvau</div>
+          <div class="btn-add">
+            <button type="button" class="btn-add-cart"></button>
+            <button type="button" class="btn-add-wishlist"></button>
+          </div>
+        </div>
+        <a href="/" class="title">
+          <p class="product-name">chaussure de basket</p>
+          <p class="product-price">$20</p>
+        </a>  
+  </article>
+  <article class="product">
+        <div class="product-thumnail">
+          <img src="CH2.jpg" alt="" class="product-img">
+          <div class="label label-new">neuvauté</div>
+          <div class="btn-add">
+            <button type="button" class="btn-add-cart"></button>
+            <button type="button" class="btn-add-wishlist"></button>
+          </div>
+        </div>
+        <a href="/" class="title">
+          <p class="product-name"> basket classic</p>
+          <p class="product-price">$18</p>
+        </a>  
+  </article>
+  <article class="product">
+        <div class="product-thumnail">
+          <img src="CH3.jpg" alt="" class="product-img">
+          <div class="label label-new">neuvauté</div>
+          <div class="btn-add">
+            <button type="button" class="btn-add-cart"></button>
+            <button type="button" class="btn-add-wishlist"></button>
+          </div>
+        </div>
+        <a href="/" class="title">
+          <p class="product-name">sandals sandcruisers </p>
+          <p class="product-price">$14</p>
+        </a>  
+  </article>
+  <article class="product">
+        <div class="product-thumnail">
+          <img src="CH1.jpg" alt="IMG" class="product-img">
+          <div class="label label-new">neuvauté</div>
+          <div class="btn-add">
+            <button type="button" class="btn-add-cart"></button>
+            <button type="button" class="btn-add-wishlist"></button>
+          </div>
+        </div>
+        <a href="/" class="title">
+          <p class="product-name">nike the phontomVSN</p>
+          <p class="product-price">$22</p>
+        </a>  
+  </article>
+  <article class="product">
+    <div class="product-thumnail">
+      <img src="CH6.jpg" alt="" class="product-img">
+      <div class="label label-new">neuvau</div>
+      <div class="btn-add">
+        <button type="button" class="btn-add-cart"></button>
+        <button type="button" class="btn-add-wishlist"></button>
+      </div>
+    </div>
+    <a href="/" class="title">
+      <p class="product-name">chaussure classic</p>
+      <p class="product-price">$20</p>
+    </a>  
+</article>
+</section>
+
+ <!--about-->
+ <div class="about-section">
+  <div class="inner-container">
+    <h1>a propos </h1>
+    <p class="text">
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit ducimus, enim inventore earum, eligendi nostrum pariatur necessitatibus eius dicta a voluptates sit deleniti autem error eos totam nisi neque voluptates sit deleniti autem error eos totam nisi neque.
+    </p>
+    <div class="skills">
+      <span>produit feuteur</span>
+      <span>ancien</span>
+      <span>top</span>
+    </div>
+  </div>
+</div>
+
+<!--notre produit-->
+<h1 class="tet">nos produit</h1>
+
+<div class="gallery" id="gallery">
+    <div class="gallery-item">
+        <div class="content"><img src="m1.jpg" alt=""></div>
+    </div>
+    <div class="gallery-item">
+        <div class="content"><img src="m2.jpg" alt=""></div>
+    </div>
+    <div class="gallery-item">
+        <div class="content"><img src="m3.jpg" alt=""></div>
+    </div>
+    <div class="gallery-item">
+        <div class="content"><img src="m4.jpg" alt=""></div>
+    </div>
+    <div class="gallery-item">
+        <div class="content"><img src="m5.jpg" alt=""></div>
+    </div>
+   
+    <div class="gallery-item">
+        <div class="content"><img src="m6.jpg" alt=""></div>
+
+      </div>
+      <div class="gallery-item">
+          <div class="content"><img src="m7.jpg" alt=""></div>
+      </div>
+      <div class="gallery-item">
+          <div class="content"><img src="m8.jpg" alt=""></div>
+      </div>
+      <div class="gallery-item">
+          <div class="content"><img src="m9.jpg" alt=""></div>
+      </div>
+    <!--script gallery-->
+    
+<script>
+  var gallery = document.querySelector('#gallery');
+  var getVal = function (elem, style) { return parseInt(window.getComputedStyle(elem).getPropertyValue(style)); };
+  var getHeight = function (item) { return item.querySelector('.content').getBoundingClientRect().height; };
+  var resizeAll = function () {
+  var altura = getVal(gallery, 'grid-auto-rows');
+  var gap = getVal(gallery, 'grid-row-gap');
+  gallery.querySelectorAll('.gallery-item').forEach(function (item) {
+  var el = item;
+  el.style.gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
+  });
+  };
+  gallery.querySelectorAll('img').forEach(function (item) {
+  item.classList.add('byebye');
+  if (item.complete) {
+  console.log(item.src);
+  }
+  else {
+  item.addEventListener('load', function () {
+      var altura = getVal(gallery, 'grid-auto-rows');
+      var gap = getVal(gallery, 'grid-row-gap');
+      var gitem = item.parentElement.parentElement;
+      gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
+      item.classList.remove('byebye');
+  });
+  }
+  });
+  window.addEventListener('resize', resizeAll);
+  gallery.querySelectorAll('.gallery-item').forEach(function (item) {
+  item.addEventListener('click', function () {        
+  item.classList.toggle('full');        
+  });
+  });
+  
+  </script>
+  
+</div>
+<!--collection-->
+<div class="offre">
+  <h3 class="offre-h" >nouvelle collection 2020</h3>
+  <h1 class="offre-hh">réductions considérables </h1>
+  <p  class="offre-p">
+      posbilité a port domicile
+  </p>
+</div>
+<!--footer-->
+<footer>
+  <body>
+    <div class="contact-section">
+      <div class="inner-width">
+        <h1>contact </h1>
+        <input type="text" class="name" placeholder="votre Nome">
+        <input type="email" class="email" placeholder="votre Email">
+        <textarea rows="1" placeholder="Message" class="message"></textarea>
+        <button>contact</button>
+      </div>
+    </div>
+    <div class="footer-container">
+        <div class="left-col">
+          <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <p class="rights-text">© 2020 établi par leila yagoubi</p>
+        </div>
+
+      </div>
+
+
+
+</footer>
+
+
+</body>
+</html>
