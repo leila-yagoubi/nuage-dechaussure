@@ -241,7 +241,7 @@ a.current_dot {
   /*produit carte*/
 
 a {
-    color: #ffffff;
+    color: #977a7a;
     text-decoration: none;
   }
   ul, li {
@@ -269,7 +269,7 @@ a {
     width: 100%;
     height: 40px;
     border-radius: 5px;
-    background:rgb(245, 243, 243);
+    background:rgb(196, 194, 194);
     text-align: left;
   }
   .tap-menu ul {
